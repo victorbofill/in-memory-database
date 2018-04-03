@@ -1,0 +1,31 @@
+{
+  "name": "in-memory-database",
+  "version": "1.0.0",
+  "description": "Making electronic databases. As in INVENTING them. Yeah.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "npm run test:mocha",
+    "test:mocha": "mocha",
+    "start": "npm run test:mocha -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorbofill/in-memory-database.git"
+  },
+  "author": "Victor Bofill <victorm.bofill@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorbofill/in-memory-database/issues"
+  },
+  "homepage": "https://github.com/victorbofill/in-memory-database#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "mocha": "^5.0.5"
+  }
+}
