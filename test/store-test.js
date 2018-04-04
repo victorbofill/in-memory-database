@@ -1,21 +1,47 @@
 const assert = require('assert');
-const store = require('../lib/store');
+const Store = require('../lib/store');
 const uniqid = require('uniqid');
 
-describe('Store method tests', () => {
-    it('.save', () => {
-        // run the save method
-        // check the store that whatever has been saved is in the store
+describe('STORE TESTS', () => {
 
-        assert.equal(true, true);
+    let characters = new Store('My Characters');
+    let ids = [];
+    
+    it('.save: saved Thargor with id', () => {
+        const newEntry = characters.save({ name: 'Thargor', class: 'barbarian' });
+
+        assert(newEntry.hasOwnProperty('_id'), true);
+
+        ids.push(newEntry._id);
     });
 
-    // it('.get', () => {
+    it('.save: saved Tim with id', () => {
+        const newEntry = characters.save({ name: 'Tim', class: 'enchanter' });
 
-    // run the get method
-    // verify that the attempted get by id has the name it should
+        assert(newEntry.hasOwnProperty('_id'), true);
 
-    // });
+        ids.push(newEntry._id);
+    });
+
+    it('.save: saved Barbara with id', () => {
+        const newEntry = characters.save({ name: 'Barbara', class: 'musician' });
+
+        assert(newEntry.hasOwnProperty('_id'), true);
+
+        ids.push(newEntry._id);
+    });
+
+    it('.get: successful retrieval', () => {
+        const retrievedEntry = characters.get(ids[0]);
+
+        assert(retrievedEntry._id, characters.contents[0]._id);
+    });
+
+    it('.get: successfully returning "null" on non-entry', () => {
+        const retrievedEntry = characters.get('asdf');
+
+        assert.deepEqual(retrievedEntry, null);
+    });
 
     // it('.getAll', () => {
 
