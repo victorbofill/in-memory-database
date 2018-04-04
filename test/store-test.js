@@ -1,6 +1,5 @@
 const assert = require('assert');
 const Store = require('../lib/store');
-const uniqid = require('uniqid');
 
 describe('STORE TESTS', () => {
 
