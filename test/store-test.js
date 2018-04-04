@@ -48,10 +48,17 @@ describe('STORE TESTS', () => {
         assert.deepEqual(characters.contents, contentsTest);
     });
 
-    // it('.remove', () => {
+    it('.remove: removal successful', () => {
+        const removingId = characters.contents[0]._id;
+        const success = characters.remove(removingId);
 
-    // run the remove method
-    // check to ensure that the removed id is no longer in the store
+        assert.deepEqual(success, { removed: true });
+    });
 
-    // });
+    it('.remove: successful non-removal of entry', () => {
+        const removingId = 'asdf';
+        const success = characters.remove(removingId);
+
+        assert.deepEqual(success, { removed: false });
+    });
 });
