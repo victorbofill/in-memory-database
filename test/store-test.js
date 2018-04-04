@@ -42,12 +42,11 @@ describe('STORE TESTS', () => {
         assert.deepEqual(retrievedEntry, null);
     });
 
-    // it('.getAll', () => {
+    it('.getAll: successfully runs', () => {
+        const contentsTest = characters.getAll();
 
-    // run the getAll method
-    // check to make sure that what is returned is an array with everything in it
-
-    // });
+        assert.deepEqual(characters.contents, contentsTest);
+    });
 
     // it('.remove', () => {
 
