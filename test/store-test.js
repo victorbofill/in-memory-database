@@ -1,5 +1,6 @@
 const assert = require('assert');
-const store = requite('../lib/store');
+const store = require('../lib/store');
+const uniqid = require('uniqid');
 
 describe('Store method tests', () => {
     it('.save', () => {
